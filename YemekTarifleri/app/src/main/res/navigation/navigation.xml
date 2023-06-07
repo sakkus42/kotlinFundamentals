@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/listFood">
+
+    <fragment
+        android:id="@+id/listFood"
+        android:name="com.example.yemektarifleri.ListFood"
+        android:label="fragment_list_food"
+        tools:layout="@layout/fragment_list_food" >
+        <action
+            android:id="@+id/action_listFood_to_addFood"
+            app:destination="@id/addFood" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFood"
+        android:name="com.example.yemektarifleri.AddFood"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" >
+        <action
+            android:id="@+id/action_addFood_to_listFood"
+            app:destination="@id/listFood" />
+        <argument
+            android:name="loc"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
